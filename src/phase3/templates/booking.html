@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Booking status Prediction</title>
+    <style>
+        p, img {
+            display: inline-block;
+            max-width: 200px;
+            max-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prediction: {{val[0]}} with Probability: {{val[1]}}</h1>
+
+    {% if val[0] == 1 %}
+      <p>Relax!! The Booking will not be Cancelled</p>
+      <img src="https://img.freepik.com/premium-vector/hedgehog-jumping-cartoon-happy-hurray-porcupine_125446-345.jpg?w=2000" alt="Relax image"><br>
+    {% else %}
+      <p>The Booking Will be Cancelled!!</p>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_dyH49aKkh88ZRYrJYeNyH19iIa7eNRdLLQ&usqp=CAU" alt="Cancelled image"><br>
+    {% endif %}
+
+</body>
+</html>

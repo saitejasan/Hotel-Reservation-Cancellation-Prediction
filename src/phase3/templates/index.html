@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Booking</title>
+  <style>
+      label {
+        color: rgb(6, 6, 6);
+        font-weight: bold;
+      }
+
+      body {
+          background-image: url("https://www.travelandleisure.com/thmb/pCU_Y9fbQe4CT5Q73J9k2Bqd_bI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/header-grand-velas-los-cabos-MXALLINC0222-46d3772ad56f4493a83e1bcb49e119f9.jpg");
+          background-repeat: no-repeat;
+          background-size: cover;
+      }
+  </style>
+  
+</head>
+
+<body>
+    <div style="text-align: center; background-color: #e0d688; padding: 20px;">
+      <h1>Customer Reservation Cancellation Prediction</h1>
+    </div>
+    <div class="container">
+      <div class="col-6" style="background-color: #e6ebec; padding: 20px;">
+        <form action = "/booking_status" method="post">
+          <div class="form-group">
+            <label for="adults">Total no.of Adults</label>
+            <input type="text" class="form-control" id="adults" name="adults" aria-describedby="emailHelp" >
+          </div>
+  
+          <div class="form-group">
+            <label for="children">Total no.of children</label>
+            <input type="text" class="form-control" id="children" name="children" aria-describedby="emailHelp" >
+          </div>
+  
+          <div class="form-group">
+            <label for="weekend_nights">Total nights over the weekend </label>
+            <input type="text" class="form-control" id="weekend_nights" name="weekend_nights" aria-describedby="emailHelp" >
+          </div>
+  
+          <div class="form-group">
+            <label for="week_nights">Total nights over the week </label>
+            <input type="text" class="form-control" id="week_nights" name="week_nights">
+          </div>
+  
+          <!-- <div class="form-group">
+            <label for="meal_plan">Type of Meal Plan</label>
+            <input type="text" class="form-control" id="meal_plan" name="meal_plan">
+          </div> -->
+  
+          <div class="form-group">
+            <label for="meal_plan">Type of Meal Plan</label>
+            <select class="form-control" id="meal_plan" name="meal_plan">
+              <option value="" selected disabled>--Select--</option>
+              <option value="0">Meal Plan 1</option>
+              <option value="1">Meal Plan 2</option>
+              <option value="2">Meal Plan 3</option>
+              <option value="3">Not Selected</option>
+            </select>
+          </div>
+          
+          <!-- <div class="form-group">
+            <label for="car_parking">Requirement for Car Parking</label>
+            <input type="text" class="form-control" id="car_parking" name="car_parking">
+          </div> -->
+  
+          <div class="form-group">
+            <label for="room_type">Requirement for Car Parking</label>
+            <select class="form-control" id="car_parking" name="car_parking">
+              <option value="" selected disabled>--Select--</option>
+              <option value="0">No</option>
+              <option value="1">Yes</option>
+            </select>
+          </div>
+  
+          <!-- <div class="form-group">
+            <label for="room_type">Type of room reserved</label>
+            <input type="text" class="form-control" id="room_type" name="room_type">
+          </div> -->
+  
+          <div class="form-group">
+            <label for="room_type">Type of Room Reserved</label>
+            <select class="form-control" id="room_type" name="room_type">
+              <option value="" selected disabled>--Select--</option>
+              <option value="0">Room Type 1</option>
+              <option value="1">Room Type 2</option>
+              <option value="2">Room Type 3</option>
+              <option value="3">Room Type 4</option>
+              <option value="4">Room Type 5</option>
+              <option value="5">Room Type 6</option>
+              <option value="6">Room Type 7</option>
+            </select>
+          </div>
+  
+          <div class="form-group">
+            <label for="lead_time">Lead Time</label>
+            <input type="text" class="form-control" id="lead_time" name="lead_time">
+          </div>
+  
+          <!-- <div class="form-group">
+            <label for="market_seg">Type of market segment</label>
+            <input type="text" class="form-control" id="market_seg" name="market_seg">
+          </div> -->
+  
+          <div class="form-group">
+            <label for="room_type">Type of Market Segment</label>
+            <select class="form-control" id="market_seg" name="market_seg">
+              <option value="" selected disabled>--Select--</option>
+              <option value="0">Avaition</option>
+              <option value="1">Complementary</option>
+              <option value="2">Corporate</option>
+              <option value="3">Offline</option>
+              <option value="4">online</option>
+            </select>
+          </div>
+  
+          <!-- <div class="form-group">
+            <label for="repeated_guest">Previous Customer?</label>
+            <input type="text" class="form-control" id="repeated_guest" name="repeated_guest">
+          </div> -->
+  
+          <div class="form-group">
+            <label for="room_type">Previous Customer? (Repeated guest)</label>
+            <select class="form-control" id="repeated_guest" name="repeated_guest">
+              <option value="" selected disabled>--Select--</option>
+              <option value="0">No</option>
+              <option value="1">Yes</option>
+            </select>
+          </div>
+  
+          <div class="form-group">
+            <label for="cancellations">Total # of Previous Cancelled Bookings</label>
+            <input type="text" class="form-control" id="cancellations" name="cancellations">
+          </div>
+  
+          <div class="form-group">
+            <label for="non_cancellations">Total # of Previous Un-Cancelled Bookings</label>
+            <input type="text" class="form-control" id="non_cancellations" name="non_cancellations">
+          </div>
+  
+          <div class="form-group">
+            <label for="avg_price">Average room price</label>
+            <input type="text" class="form-control" id="avg_price" name="avg_price">
+          </div>
+  
+          <div class="form-group">
+            <label for="special_requests">Total no.of special requests</label>
+            <input type="text" class="form-control" id="special_requests" name="special_requests">
+          </div>
+  
+      
+  
+          <button type="submit" value="Submit" class="btn btn-primary">Predict</button>
+
+          <a href="{{ url_for('show_vis') }}">Click here to visit the Visualization Dashboard</a>
+
+        </form>
+      </div>
+    </div>
+</body>
+</html>
+
